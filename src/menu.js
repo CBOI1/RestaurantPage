@@ -59,12 +59,6 @@ class Menu {
         shrimpPlatePath
     );
 
-
-
-    #document;
-    constructor(document) {
-        this.#document = document;
-    }
     #createMenuItem(item) {
         const menuItem = this.#document.createElement("div");
         const itemName = this.#document.createElement("h3");
@@ -88,3 +82,12 @@ class Menu {
         content.append(title, quesadilla, simpleVeggieDish, tacos, shrimpPlate);
     }
 }
+
+function createMenuPageCallback(doc) {
+    return function() {
+        const menu = new Menu(doc);
+        menu.setUpMenu();
+    }
+}
+
+export default createMenuPageCallback;

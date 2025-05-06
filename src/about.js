@@ -55,11 +55,11 @@ class AboutPage {
 
 }
 
-function createAboutPageLoader(doc) {
+function createAboutPageCallback(doc) {
     return function() {
         const about = new AboutPage(doc);
         about.setUpPage();
     }
 }
 
-export default createAboutPageLoader;
+export default createAboutPageCallback;
