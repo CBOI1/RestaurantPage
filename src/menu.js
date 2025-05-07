@@ -61,12 +61,13 @@ class Menu {
 
     #createMenuItem(item) {
         const menuItem = this.#document.createElement("div");
-        const itemName = this.#document.createElement("h3");
+        menuItem.classList.add("menu-item");
+        const itemName = this.#document.createElement("h4");
         const itemDescription = this.#document.createElement("p");
         const itemPrice = this.#document.createElement("p");
         itemName.textContent = item.name;
         itemDescription.textContent = item.description;
-        itemPrice.price = item.price;
+        itemPrice.textContent = item.price;
         menuItem.append(itemName, itemDescription, itemPrice);
         return menuItem;
     }
@@ -76,9 +77,10 @@ class Menu {
         const simpleVeggieDish = this.#createMenuItem(this.#simpleVeggieDish);
         const tacos = this.#createMenuItem(this.#tacos);
         const shrimpPlate = this.#createMenuItem(this.#shrimpPlate);
-        const title = this.#document.createElement("h3");
+        const title = this.#document.createElement("h2");
         title.textContent = "Menu";
         const content = this.#document.querySelector("#content");
+        content.classList.add("menu-container");
         content.append(title, quesadilla, simpleVeggieDish, tacos, shrimpPlate);
     }
 }

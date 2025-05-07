@@ -18,6 +18,7 @@ class RetuarantPage {
     #clearContent() {
         const content = document.querySelector("#content");
         content.innerHTML = "";
+        content.setAttribute("class", "");
     }
 
     #setupPage(pageSetter) {
